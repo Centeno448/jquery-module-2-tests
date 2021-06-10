@@ -12,15 +12,30 @@ beforeAll(() => {
     </form>
 
     <div id="button">Añadir ítem</div>
+    <ol></ol>
   </div>
     `;
   require('./index');
 });
 
-it('index.js imprime a consola el valor del input al presionar el div id="Button" | Asegúrate de que al presionar el div id="Button" se imprima a consola el valor del input', () => {
+it('index.js agrega un nuevo item a la ol al presionar el div id="button" | Asegúrate de que al presionar el div id="Button" se agregue un nuevo item a la ol con el valor del input', () => {
   $('input[type="text"]').val('124asd213');
 
   $('#button').click();
 
-  expect($('h2').text()).toBe('124asd213');
+  expect($('li:last-child').text()).toBe('124asd213');
+
+  $('input[type="text"]').val('00123');
+
+  $('#button').click();
+
+  expect($('li:last-child').text()).toBe('00123');
+});
+
+it('index.js limpia el valor del input al hacer click | Asegúrate de que al presionar el div id="Button" se limpie el valor del input', () => {
+  $('input[type="text"]').val('124asd213');
+
+  $('#button').click();
+
+  expect($('input[type="text"]').val()).toBe('');
 });

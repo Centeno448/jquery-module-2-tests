@@ -29,3 +29,10 @@ it('index.html tiene 1 input type="text" con name="itemCompras" | Asegúrate de 
   expect(input).not.toBeNull();
   expect(input.name).toBe('itemCompras');
 });
+
+it('index.html tiene 1 ol vacío | Asegúrate de renderizar 1 ol vacío dentro de index.html', () => {
+  const ol = container.querySelector('ol');
+  const li = container.querySelector('li');
+  expect(ol).not.toBeNull();
+  expect(li).toBeNull();
+});
