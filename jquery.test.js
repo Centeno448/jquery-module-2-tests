@@ -19,21 +19,21 @@ beforeAll(() => {
 });
 
 it('index.js agrega un nuevo item a la ol al presionar el div id="button" | Asegúrate de que al presionar el div id="Button" se agregue un nuevo item a la ol con el valor del input', () => {
-  $('input[type="text"]').val('124asd213');
+  $('input[type="text"]').val('1');
 
   $('#button').click();
 
-  expect($('li:last-child').text()).toBe('124asd213');
+  expect($('li:last-child').text()).toBe('1');
 
-  $('input[type="text"]').val('00123');
+  $('input[type="text"]').val('2');
 
   $('#button').click();
 
-  expect($('li:last-child').text()).toBe('00123');
+  expect($('li:last-child').text()).toBe('2');
 });
 
 it('index.js limpia el valor del input al hacer click | Asegúrate de que al presionar el div id="Button" se limpie el valor del input', () => {
-  $('input[type="text"]').val('124asd213');
+  $('input[type="text"]').val('3');
 
   $('#button').click();
 
