@@ -1,7 +1,6 @@
-import './style.css';
+import $ from 'jquery';
 
-$(document).ready(function() {
-  $('#button').click(function() {
-    var toAdd = $('input[name=itemCompras]').val();
-  });
+$('#button').click(function () {
+  var toAdd = $('input[name=itemCompras]').val();
+  $('h2').text(toAdd);
 });
